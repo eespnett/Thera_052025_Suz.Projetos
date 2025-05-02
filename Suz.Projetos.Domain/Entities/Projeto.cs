@@ -8,5 +8,6 @@
         public string TituloProjeto { get; set; }
 
         // Categoria
+        public Categoria Categoria { get; set; }
     }
 }

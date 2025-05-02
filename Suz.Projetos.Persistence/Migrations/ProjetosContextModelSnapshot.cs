@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Suz.Projetos.Domain.Entities;
 using Suz.Projetos.Persistence;
 
 #nullable disable
@@ -56,6 +57,49 @@ namespace Suz.Projetos.Persistence.Migrations
 
                     b.ToTable("Projetos");
                 });
+
+            modelBuilder.Entity("Suz.Projetos.Domain.Entities.Categoria", b =>
+            {
+                b.Property<int>("Id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("INTEGER");
+
+                b.Property<DateTime>("DataCriacao")
+                    .HasColumnType("TEXT");
+
+                b.Property<string>("DescricaoCategoria")
+                    .IsRequired()
+                    .HasMaxLength(2048)
+                    .HasColumnType("TEXT");
+
+                b.Property<Categoria>("idCategoria")
+                    .IsRequired() 
+                    .HasColumnType("INTEGER");
+
+                b.HasKey("Id");
+
+                b.ToTable("Categoria");
+            });
+
+            modelBuilder.Entity("Suz.Projetos.Domain.Entities.SubCategoria", b =>
+            {
+                b.Property<int>("Id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("INTEGER");
+
+                b.Property<DateTime>("DataCriacao")
+                    .HasColumnType("TEXT");
+
+                b.Property<string>("DescricaoSubCategoria")
+                    .IsRequired()
+                    .HasMaxLength(2048)
+                    .HasColumnType("TEXT");
+ 
+
+                b.HasKey("Id");
+
+                b.ToTable("            modelBuilder.Entity(\"Suz.Projetos.Domain.Entities.SubCategoria\", b =>\r\n");
+            });
 #pragma warning restore 612, 618
         }
     }

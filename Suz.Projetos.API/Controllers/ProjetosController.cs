@@ -29,6 +29,20 @@ namespace Suz.Projetos.API.Controllers
             }
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetByCategory(Categoria categoria)
+        {
+            try
+            {
+                var result = await _projetoRepository.GetAllByCategory(categoria);
+                return Ok(result);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
+
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Projeto projeto)
         {

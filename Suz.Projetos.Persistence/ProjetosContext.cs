@@ -9,6 +9,11 @@ namespace Suz.Projetos.Persistence
         public DbSet<Projeto> Projetos { get; set; }
         public DbSet<Pessoa> Pessoas { get; set; }
 
+        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<SubCategoria> SubCategorias { get; set; }
+
+        public DbSet<SubCategoriaCategoria> SubCategoriaCategorias { get; set; }
+
         public ProjetosContext(DbContextOptions<ProjetosContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder builder)

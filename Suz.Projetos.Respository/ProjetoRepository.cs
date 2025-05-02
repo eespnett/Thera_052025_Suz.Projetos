@@ -19,6 +19,12 @@ namespace Suz.Projetos.Respository
                 .ToListAsync();
         }
 
+        public Task<List<Projeto>> GetAllByCategory(Categoria categoria)
+        {
+            return _dbContext.Set<Projeto>().Where(x=>x.Categoria==categoria)
+           .ToListAsync();
+        }
+
         public async Task SaveAsync(Projeto projeto)
         {
             _dbContext.Set<Projeto>().Add(projeto);

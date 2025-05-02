@@ -17,6 +17,9 @@ namespace Suz.Projetos.Persistence.Configurations
             builder.Property(e => e.DescricaoProjeto)
                 .IsRequired()
                 .HasMaxLength(2048);
+
+            builder.Property(e => e.Categoria)
+           .IsRequired();
         }
     }
 }

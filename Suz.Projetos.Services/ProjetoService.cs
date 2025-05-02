@@ -21,5 +21,10 @@ namespace Suz.Projetos.Service
         {
             return _projetoRepository.GetAllAsync();
         }
+
+        public Task<List<Projeto>> GetAllByCategory(Categoria categoria)
+        {
+            return _projetoRepository.GetAllByCategory(categoria);
+        }
     }
 }

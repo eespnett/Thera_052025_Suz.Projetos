@@ -10,13 +10,19 @@ namespace Suz.Projetos.API
     {
         public static IServiceCollection ApplyIoC(this IServiceCollection services)
         {
+            services.AddTransient<ICategoriaRepository, CategoriaRepository>();
+            services.AddTransient<ICategoriaService, CategoriaService>();
+            services.AddTransient<ISubCategoriaRepository, SubCategoriaRepository>();
+            services.AddTransient<ISubCategoriaService, SubCategoriaService>();
+
+
             services.AddTransient<DbContext, ProjetosContext>();
 
             services.AddTransient<IProjetoRepository, ProjetoRepository>();
 
             services.AddTransient<IPessoaRepository, PessoaRepository>();
             services.AddTransient<IPessoaService, PessoaService>();
-
+        
             return services;
         }
     }

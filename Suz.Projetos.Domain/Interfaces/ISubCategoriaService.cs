@@ -7,11 +7,9 @@ using Suz.Projetos.Domain.Entities;
 
 namespace Suz.Projetos.Domain.Interfaces
 {
-    public interface IProjetoService
+    public interface ISubCategoriaService
     {
-        Task Create(Projeto projeto);
-        Task<List<Projeto>> GetAllAsync();
-
-        Task<List<Projeto>> GetAllByCategory(Categoria categoria);
+        Task Create(SubCategoria projeto);
+        Task<List<SubCategoria>> GetAllAsync();
     }
 }
